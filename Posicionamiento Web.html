@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #34495e;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .menu-button {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            background: none;
+            border: none;
+            color: white;
+            text-align: left;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .menu-button:hover {
+            background-color: #3d566e;
+        }
+
+        .menu-button.active {
+            background-color: #3498db;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .content-section {
+            display: none;
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .content-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .two-columns {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+            }
+            .two-columns {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Posicionamiento Web</h1>
+    </header>
+
+    
+    <div class="container">
+        
+        <div class="sidebar">
+            <h2>Estrategias</h2>
+            <button class="menu-button active" data-target="seo">SEO</button>
+            <button class="menu-button" data-target="sem">SEM</button>
+            <button class="menu-button" data-target="visibilidad">Visibilidad en resultados</button>
+        </div>
+
+       
+        <div class="content">
+            
+            <div id="seo" class="content-section active">
+                <h2>SEO (Search Engine Optimization)</h2>
+                <p>El SEO es el proceso de optimizar un sitio web para mejorar su visibilidad en los motores de búsqueda como Google, Bing y Yahoo. Se enfoca en resultados de búsqueda orgánicos (no pagados).</p>
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>SEO On-Page</h3>
+                        <p>Optimización de elementos dentro del sitio web como títulos, meta descripciones, contenido, estructura HTML y experiencia de usuario.</p>
+                    </div>
+                    <div class="column">
+                        <h3>SEO Off-Page</h3>
+                        <p>Actividades realizadas fuera del sitio web para mejorar su posicionamiento, como link building, presencia en redes sociales y menciones en otros sitios.</p>
+                    </div>
+                </div>
+                <center><img src="Que-es-el-SEO.jpg" width="300" alt=""/></center>
+				<p>Una estrategia de SEO efectiva puede aumentar significativamente el tráfico orgánico, mejorar la visibilidad de la marca y generar leads de calidad a un costo menor que la publicidad pagada.</p>
+            </div>
+
+            
+            <div id="sem" class="content-section">
+                <h2>SEM (Search Engine Marketing)</h2>
+                <p>El SEM se refiere a las estrategias de marketing en motores de búsqueda que incluyen publicidad de pago para aparecer en resultados destacados. La forma más común de SEM es la publicidad PPC (Pago Por Clic).</p>
+                <img src="sem.jpeg" width="275" height="183" alt=""/>
+				<p>El SEM permite obtener visibilidad inmediata en los resultados de búsqueda y es especialmente útil para lanzamientos de productos, campañas específicas o para competir en industrias altamente competitivas.</p>
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>Ventajas del SEM</h3>
+                        <ul>
+                            <li>Resultados inmediatos</li>
+                            <li>Segmentación precisa de audiencia</li>
+                            <li>Control total del presupuesto</li>
+                            <li>Métricas detalladas de rendimiento</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Plataformas principales</h3>
+                        <ul>
+                            <li>Google Ads</li>
+                            <li>Microsoft Advertising</li>
+                            <li>Publicidad en redes sociales</li>
+                            <li>Anuncios display</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="visibilidad" class="content-section">
+                <h2>Visibilidad en resultados</h2>
+                <p>Aparecer en los primeros resultados de búsqueda es fundamental para captar la atención de los usuarios y generar tráfico cualificado. La visibilidad combina tanto estrategias orgánicas (SEO) como pagadas (SEM).</p>
+                <img src="que-es-SEO-y-SEM_0.png" width="500" alt=""/>
+				<p>Las estrategias para mejorar el posicionamiento en resultados incluyen optimización técnica, creación de contenido relevante, construcción de autoridad y publicidad dirigida.</p>
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>Factores que afectan la visibilidad</h3>
+                        <ul>
+                            <li>Calidad del contenido</li>
+                            <li>Experiencia de usuario</li>
+                            <li>Velocidad de carga del sitio</li>
+                            <li>Optimización móvil</li>
+                            <li>Autoridad del dominio</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Métricas de visibilidad</h3>
+                        <ul>
+                            <li>Posiciones en SERPs</li>
+                            <li>Porcentaje de impresiones</li>
+                            <li>Tasa de clics (CTR)</li>
+                            <li>Tráfico orgánico vs. pagado</li>
+                            <li>Palabras clave posicionadas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer>
+        Diana Paola Pérez Lagunas _ noviembre 2025
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButtons = document.querySelectorAll('.menu-button');
+            const contentSections = document.querySelectorAll('.content-section');
+            
+            menuButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    
+                    menuButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    
+                    this.classList.add('active');
+                    
+                    
+                    contentSections.forEach(section => section.classList.remove('active'));
+                    
+                    
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
